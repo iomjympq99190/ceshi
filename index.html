@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="/ceshi/assets/index-e3f1f5e2.css">
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>good Code666</h1>
+    </div>
     
   </body>
 </html>
@@ -19,4 +21,35 @@
   if (globalThis.alert){
     alert('测试')
   }
+  //冒泡算法
+    function bubbleSort(arr) {
+        for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+            let temp = arr[j + 1]
+            arr[j + 1] = arr[j]
+            arr[j] = temp
+            }
+        }
+        }
+        return arr
+    }
+    //快速排序
+    function quickSort(arr) {
+        if (arr.length <= 1) {
+        return arr
+        }
+        let left = []
+        let right = []
+        let midIndex = Math.floor(arr.length / 2)
+        let midValue = arr.splice(midIndex, 1)[0]
+        for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < midValue) {
+            left.push(arr[i])
+        } else {
+            right.push(arr[i])
+        }
+        }
+        return quickSort(left).concat(midValue, quickSort(right))
+    }
 </script>
